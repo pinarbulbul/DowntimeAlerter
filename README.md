@@ -73,3 +73,5 @@ Admin: admn.downtimealerter@gmail.com
 Password: Admin12*
 ```
 **Logs and Hangfire Links are shown only to Administrator role.
+
+6. Application send mail to user if service is down or if there is an error while health checking. So you need to register with a real mail address. 
