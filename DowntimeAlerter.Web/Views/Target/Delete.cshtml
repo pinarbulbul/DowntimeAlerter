@@ -1,0 +1,48 @@
+﻿@model DowntimeAlerter.Application.Models.Target.EditVm
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.Url)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Url)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.MonitoringIntervalInMinutes)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.MonitoringIntervalInMinutes)
+        </dd>
+    </dl>
+</div>
+
+<div  class="row"> 
+    <div class="col-md-12">
+        <p>Are you sure you want to delete the record?</p>
+    </div>
+    <div class="col-md-12">
+        <form method="post">
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <input type="submit" value="Delete" class="btn btn-danger" /> 
+            </div>     
+        </form>
+    </div>
+</div>
+
+    @Html.Partial("_BackToListButton")
