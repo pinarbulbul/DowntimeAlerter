@@ -66,3 +66,10 @@ dotnet ef database update --context ApplicationIdentityDbContext --startup-proje
 
 dotnet ef database update --context TargetDbContext --startup-project DowntimeAlerter.Web --project DowntimeAlerter.EntityFrameworkCore
 ```
+
+5. Admin user is created with migration:
+```
+Admin: admn.downtimealerter@gmail.com
+Password: Admin12*
+```
+**Logs and Hangfire Links are shown only to Administrator role.
