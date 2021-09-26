@@ -1,0 +1,67 @@
+﻿@model IEnumerable<DowntimeAlerter.Application.Models.ApplicationLog.LogVm>
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>Logs</h1>
+    <p> Only last week's errors are shown.</p>
+
+<table class="table">
+    <thead>
+        <tr>            
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Level)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeStamp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Message)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Exception)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+             <td style="min-width:75px">
+                @Html.ActionLink("Detail", "Detail", new { id=item.Id }, new { @class = "btn btn-info"})
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>           
+            <td>
+                @Html.DisplayFor(modelItem => item.Level)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeStamp)
+            </td>
+             <td class="log-exception">   
+                 @if(item.Message?.Length>300){
+                    <span>@item.Message?.Substring(0,300) ...</span>      
+                 }
+                 else
+                 {
+                    @Html.DisplayFor(modelItem => item.Message)
+                 }                           
+            </td>
+            <td class="log-exception" >
+                @if(item.Exception?.Length>300){
+                    <span>@item.Exception?.Substring(0,300) ...</span>      
+                 }
+                 else
+                 {
+                    @Html.DisplayFor(modelItem => item.Exception)
+                 }    
+            </td>           
+        </tr>
+}
+    </tbody>
+</table>

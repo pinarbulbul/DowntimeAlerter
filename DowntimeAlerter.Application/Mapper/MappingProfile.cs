@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using DowntimeAlerter.Application.Models.Log;
+using DowntimeAlerter.Application.Models.ApplicationLog;
 using DowntimeAlerter.Application.Models.Target;
 using DowntimeAlerter.Domain.Entities;
 

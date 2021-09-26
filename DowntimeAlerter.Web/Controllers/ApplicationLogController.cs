@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 namespace DowntimeAlerter.Web.Controllers
 {
     [Authorize(Roles = "Administrator")]
-    public class LogController : Controller
+    public class ApplicationLogController : Controller
     {
         private readonly ILogService _logService;
-        public LogController(ILogService logService)
+        public ApplicationLogController(ILogService logService)
         {
             _logService = logService;
 
